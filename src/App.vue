@@ -1,9 +1,19 @@
 <template>
   <div id="app">
     <NavBar />
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
+
+<script>
+import NavBar from "@/components/NavBar.vue";
+
+export default {
+  components: {
+    NavBar,
+  },
+};
+</script>
 
 <style>
 html {
@@ -230,13 +240,3 @@ select::ms-expand {
   opacity: 0;
 }
 </style>
-
-<script>
-import NavBar from "@/components/NavBar.vue";
-
-export default {
-  components: {
-    NavBar
-  }
-};
-</script>
